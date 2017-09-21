@@ -216,7 +216,7 @@ export default {
             this.myMap.geoObjects.events.add('click', function(e) {
                 const i = e.get('target').properties.get('markerId');
                 if (myMarkers[i].onClick) {
-                    myMarkers[i].onClick(myMarkers[i]);
+                    myMarkers[i].onClick(myMarkers[i], markers);
                 }
             });
 
