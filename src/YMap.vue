@@ -194,6 +194,7 @@ export default {
                 marker.id = myMarkers[i].markerId;
                 marker.clusterName = myMarkers[i].clusterName;
                 marker.properties.set('markerId', marker.id);
+                marker.properties.set('markerIndex', i);
                 if (myMarkers[i].data) {
                     marker.properties.set('data', myMarkers[i].data);
                 }
@@ -217,7 +218,7 @@ export default {
 
             this.myMap.geoObjects.add(myGeoObjects);
             this.myMap.geoObjects.events.add('click', function(e) {
-                const i = e.get('target').properties.get('markerId');
+                const i = e.get('target').properties.get('markerIndex');
                 if (myMarkers[i].onClick) {
                     myMarkers[i].onClick(myMarkers[i], markers);
                 }
