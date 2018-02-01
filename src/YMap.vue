@@ -195,7 +195,7 @@ export default {
                 marker.clusterName = myMarkers[i].clusterName;
                 marker.properties.set('markerId', marker.id);
                 if (myMarkers[i].data) {
-                    marker.properties.set('data', mmyMarkers[i].data);
+                    marker.properties.set('data', myMarkers[i].data);
                 }
 
                 markers.push(marker);
