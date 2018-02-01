@@ -193,7 +193,10 @@ export default {
                 let marker = new ymaps[markerType](myMarkers[i].coords, properties, options);
                 marker.id = myMarkers[i].markerId;
                 marker.clusterName = myMarkers[i].clusterName;
-                marker.properties.set('markerId', i);
+                marker.properties.set('markerId', marker.id);
+                if (myMarkers[i].data) {
+                    marker.properties.set('data', mmyMarkers[i].data);
+                }
 
                 markers.push(marker);
                 myGeoObjects.add(marker);
